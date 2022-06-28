@@ -2,41 +2,45 @@
 //   FILE app.js
 //   @date 2022-06-27
 // */
-"use strict";
+'use strict';
 
 // Global variables
-var storeLocation;
-var AvgCookieSales = 0;
-let hours=["6am " ,'7am ','8am','9am','10am','11am','12pm ','1pm ','2pm ','3pm ','4pm ','5pm ','6pm ','7pm '];
+// let storeLocation;
+
+// let AvgCookieSales = 0;
+let storeHours =['6am ' ,'7am ','8am','9am','10am','11am','12pm ','1pm ','2pm ','3pm ','4pm ','5pm ','6pm ','7pm '];
 
 
-var storeLocation = [
-    'seattle',
-    'tokyo',
-    'dubai',
-    'paris',
-    'lima'
-]
+let storeLocation = [
+  'seattle',
+  'tokyo',
+  'dubai',
+  'paris',
+  'lima'
+];
 
 
+// eslint-disable-next-line no-unused-vars
 function initialize() {
-      console.log(`In initialize()`);
-      // initialzie the location data - not usually done this way
-      storeLocation = [];
+  console.log('In initialize()');
+  // initialzie the location data - not usually done this way
+  storeLocation = [];
 
-let cookieSales= document.getElementById('cookieSales');
-let storeHours = ['6am','7am', '8am', '9am', '10am', '11am', '12pm', '1pm',
- '2pm', '3pm', '4pm', '5pm', '6pm','7pm','8pm',]
- let seattle = {
+  // let cookieSales = document.getElementById('cookieSales');
+
+  // let storeHours = ['6am','7am', '8am', '9am', '10am', '11am', '12pm', '1pm',
+  //   '2pm', '3pm', '4pm', '5pm', '6pm','7pm','8pm',];
+
+  let seattle = {
     location: 'seattle',
     numOfCustomers: getRandomNumber(23, 65),
     avgCookieSales: 6.3,
     finalCount: [],
     totalCookies:0,
     getAge: function () {
-        console.log(this.location);
-        console.log(this.numOfCustomers);
-} ,
+      console.log(this.location);
+      console.log(this.numOfCustomers);
+    } ,
   };
   storeLocation.push(seattle);
 
@@ -45,11 +49,11 @@ let storeHours = ['6am','7am', '8am', '9am', '10am', '11am', '12pm', '1pm',
     numOfCustomers: getRandomNumber(3, 24),
     avgCookieSales: 1.2,
     finalCount: [],
-    totalCookies:0,
+    totalCookies: 0,
     getAge: function () {
-        console.log(this.location);
-        console.log(this.numOfCustomers);
-} ,
+      console.log(this.location);
+      console.log(this.numOfCustomers);
+    } ,
   };
   storeLocation.push(tokyo);
 
@@ -61,9 +65,9 @@ let storeHours = ['6am','7am', '8am', '9am', '10am', '11am', '12pm', '1pm',
     finalCount: [],
     totalCookies:0,
     getAge: function () {
-        console.log(this.location);
-        console.log(this.numOfCustomers);
-} ,
+      console.log(this.location);
+      console.log(this.numOfCustomers);
+    } ,
   };
   storeLocation.push(dubai);
 
@@ -74,9 +78,9 @@ let storeHours = ['6am','7am', '8am', '9am', '10am', '11am', '12pm', '1pm',
     finalCount: [],
     totalCookies:0,
     getAge: function () {
-        console.log(this.location);
-        console.log(this.numOfCustomers);
-} ,
+      console.log(this.location);
+      console.log(this.numOfCustomers);
+    } ,
   };
   storeLocation.push(paris);
 
@@ -88,17 +92,17 @@ let storeHours = ['6am','7am', '8am', '9am', '10am', '11am', '12pm', '1pm',
     finalCount: [],
     totalCookies:0,
     getAge: function () {
-        console.log(this.location);
-        console.log(this.numOfCustomers);
-} ,
+      console.log(this.location);
+      console.log(this.numOfCustomers);
+    } ,
   };
   storeLocation.push(lima);
- 
+
 
   // loop quicky through the locations and log their info
   logLocations();
-  
-  logLocations();
+
+  // logLocations();
 }
 
 /**
@@ -121,73 +125,73 @@ function logLocations() {
  * @returns {number} - the random number in years
  */
 function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+  return Math.ceil(Math.random() * (max - min) + min);
 }
 
-/**
- * Displays a randomly selected kitten on the page
- */
-function displayRandomStoreLocation() {
-  // Get a random index
-  let randomIndex = getRandomStoreLocationIndex();
-  // Build an article with sub-elements for the kitten
-  let display = buildStoreLocationDisplay(kittens[randomIndex]);
-  // get the div from the index page
-  let div = document.getElementById("StoreLocationProfiles");
-  // clear the div and then add the article to the div
-  div.innerHTML = "";
-  div.appendChild(display);
-}
+// /**
+//  * Displays a randomly selected kitten on the page
+//  */
+// function displayRandomStoreLocation() {
+//   // Get a random index
+//   let randomIndex = getRandomStoreLocationIndex();
+//   // Build an article with sub-elements for the kitten
+//   let display = buildStoreLocationDisplay(kittens[randomIndex]);
+//   // get the div from the index page
+//   let div = document.getElementById('StoreLocationProfiles');
+//   // clear the div and then add the article to the div
+//   div.innerHTML = '';
+//   div.appendChild(display);
+// }
 
 /**
  * Return a random index that is not the same as the previous index.
  *
  * @returns {number} - the index
  */
-function getRandomStoreLocationIndex() {
-  let number = 0;
-  if (kittens.length > 1) {
-    // Only do this part if there is more than one kitten
-    let needed = true;
-    while (needed) {
-      let randomIndex = Math.floor(Math.random() * storeLocation.length);
-      if (randomIndex !== lastStoreLocationIndex) {
-        number = randomIndex;
-        lastStoreLocationIndex = number;
-        needed = false;
-      }
-    }
-  }
-  return number;
-}
+// function getRandomStoreLocationIndex() {
+//   let number = 0;
+//   if (kittens.length > 1) {
+//     // Only do this part if there is more than one kitten
+//     let needed = true;
+//     while (needed) {
+//       let randomIndex = Math.floor(Math.random() * storeLocation.length);
+//       if (randomIndex !== lastStoreLocationIndex) {
+//         number = randomIndex;
+//         lastStoreLocationIndex = number;
+//         needed = false;
+//       }
+//     }
+//   }
+//   return number;
+// }
 
 /**
- * Builds the HTML to display a location 
+ * Builds the HTML to display a location
  *
  * @param {kitten} location - a location object
  * @returns {Element} - An HTML element containing a location display data
  */
-function buildLocationDisplay(storeLocation) {
+// function buildLocationDisplay(storeLocation) {
 
-  // Use the document object to create an artlicle element
-  let article = document.createElement("article");
-  let h2 = document.createElement("h2");
-  h2.innerText = storeLocation.location;
-  article.appendChild(h2);
+//   // Use the document object to create an artlicle element
+//   let article = document.createElement('article');
+//   let h2 = document.createElement('h2');
+//   h2.innerText = storeLocation.location;
+//   article.appendChild(h2);
 
-  // Add the age as a paragraph
-  let p = document.createElement("p");
-  p.innerText = `The average number of customers is ${storeLocation[i].numOfCustomers} and the average number of
-   cookies sold is ${storeLocation[i].avgCookieSales}.`;
-  article.appendChild(p);
+//   // Add the age as a paragraph
+//   let p = document.createElement('p');
+//   p.innerText = `The average number of customers is ${storeLocation[i].numOfCustomers} and the average number of
+//    cookies sold is ${storeLocation[i].avgCookieSales}.`;
+//   article.appendChild(p);
 
-  // list of interests
-  let ul = document.createElement("ul");
-  for (let i = 0; i < storeHours.length; i++) {
-    let li = document.createElement("li");
-    li.innerText = [i];
-    ul.appendChild(li);
-  }
-  article.appendChild(ul);
-  
-}
+//   // list of interests
+//   let ul = document.createElement('ul');
+//   for (let i = 0; i < storeHours.length; i++) {
+//     let li = document.createElement('li');
+//     li.innerText = [i];
+//     ul.appendChild(li);
+//   }
+//   article.appendChild(ul);
+
+// }
