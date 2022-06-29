@@ -225,6 +225,13 @@
   // }
 
 
+  //global variables
+  StoreLocation.storeSites = [];
+  let storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm',
+  '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+  
+
+
   function StoreLocation (storeLocation, minCust, maxCust, avgCookieSale, totalCookies){
   this.location = storeLocation;
   this.minCust =  minCust;
@@ -235,13 +242,18 @@
   this.cookiesPerHour = [];
   }
 
-
   let seattle = new StoreLocation('seattle', 23, 65, 6.3, 0)
-
   let tokyo = new StoreLocation('tokyo', 3, 24, 1.2, 0)
-
   let dubai = new StoreLocation('dubai', 11, 38, 3.7, 0)
-
   let paris = new StoreLocation('paris', 20, 38, 2.8, 0)
-
   let lima = new StoreLocation('lima', 2, 16, 4.6, 0)
+
+  StoreLocation.prototype.cookiesPerHour = function() {
+    for(let i=0; i<storeHours. length; i++){
+      this.avgCookieSale[i] = Math.ceil(this.getRandomNumOfCustomerEachHour() * this.totalCookies); 
+    }
+  }
+
+  StoreLocation.prototype.getRandomNumOfCustomerEachHour= function(){
+    return Math.ceil(Math.random() * (this.maxCust-this.minCust) + this.minCust);
+  }
