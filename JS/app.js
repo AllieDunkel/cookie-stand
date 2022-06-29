@@ -225,20 +225,23 @@
   // }
 
 
-  function storeLocation (storeLocation, minCust, maxCust, avgCookieSale, totalCookies)
+  function StoreLocation (storeLocation, minCust, maxCust, avgCookieSale, totalCookies){
   this.location = storeLocation;
   this.minCust =  minCust;
   this.maxCust = maxCust;
+  this.avgCookieSale = avgCookieSale
+  this.totalCookies = totalCookies
   this.numOfCustomerEachHour = [];
   this.cookiesPerHour = [];
+  }
 
 
-  let seattle = new storeLocation ('seattle', 23, 65, 6.3, 0)
+  let seattle = new StoreLocation('seattle', 23, 65, 6.3, 0)
 
-  let tokyo = new storeLocation ('tokyo', 3, 24, 1.2, 0)
+  let tokyo = new StoreLocation('tokyo', 3, 24, 1.2, 0)
 
-  let dubai = new storeLocation ('dubai', 11, 38, 3.7, 0)
+  let dubai = new StoreLocation('dubai', 11, 38, 3.7, 0)
 
-  let paris = new storeLocation ('paris', 20, 38, 2.8, 0)
+  let paris = new StoreLocation('paris', 20, 38, 2.8, 0)
 
-  let lima = new storeLocation ('lima', 2, 16, 4.6, 0)
+  let lima = new StoreLocation('lima', 2, 16, 4.6, 0)
