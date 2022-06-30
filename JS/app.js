@@ -308,9 +308,9 @@ function footerHourlyStoreTotals(){
       cookieHourlyData.textContent = cookiesForThisHour;
       tr.appendChild(cookieHourlyData);
     }
-    let cookieTotals = document.createElement('td');
-    cookieTotals.textContent = cookieTotals;
-    tr.appendChild(cookieTotals);
+    let cookieTotalsTD = document.createElement('td');
+    cookieTotalsTD.textContent = cookieTotal;
+    tr.appendChild(cookieTotalsTD);
   };
 
   StoreLocation.renderAll = function() {
