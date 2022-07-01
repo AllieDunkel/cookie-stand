@@ -38,7 +38,7 @@
                 </ul> 
             
             </section> -->
-    
+            <section>
             <table class="tabledata">
                 <thead>
                     <tr>
@@ -63,6 +63,21 @@
                 <tbody id="storeData"></tbody>
                 <tfoot id="tableFooter"></tfoot>
             </table>
+             </section>
+             <form>
+                <fieldset>
+                  <legend>Add a new Location</legend>
+                  <label for="LocationName">Location of the Store</label><br>
+                  <span id="LocationNameError" Class="LocationNameError"></span>
+                  <input type="text" id="LocationName" name="LocationName" required><br>
+                  <label for="minCust">The minimum amount of customers per hour</label><br>
+                  <input type="number" id="minCust" name="minCust"><br>
+                  <label for="maxCust">The maximum amount of customers per hour</label><br>
+                  <input type="number" id="maxCust" name="maxCust"><br>
+                  <label for="averageSales">Average amount of cookies sales per hour</label><br>
+                  <input type="number" id="averageSales" name="averageSales">
+                </fieldset>
+              </form>
     </main>
     <foot></foot>
     <script src="JS/app.js"></script>

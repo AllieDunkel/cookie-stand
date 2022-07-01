@@ -331,4 +331,3 @@ function footerHourlyStoreTotals(){
   
   StoreLocation.renderAll();
 
-
