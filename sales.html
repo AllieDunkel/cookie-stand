@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="CSS/style.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="initialize()">
     <nav>
         <img id="logo" src="images/salmon.png" alt="logo">
         <ul>
@@ -66,16 +66,17 @@
              </section>
              <form>
                 <fieldset>
-                  <legend>Add a new Location</legend>
+                  <legend>Add a new Location</legend><br>
                   <label for="LocationName">Location of the Store</label><br>
                   <span id="LocationNameError" Class="LocationNameError"></span>
-                  <input type="text" id="LocationName" name="LocationName" required><br>
+                  <input type="text" id="LocationName" name="LocationName" required><br><br>
                   <label for="minCust">The minimum amount of customers per hour</label><br>
-                  <input type="number" id="minCust" name="minCust"><br>
+                  <input type="number" id="minCust" name="minCust"><br><br>
                   <label for="maxCust">The maximum amount of customers per hour</label><br>
-                  <input type="number" id="maxCust" name="maxCust"><br>
+                  <input type="number" id="maxCust" name="maxCust"><br><br>
                   <label for="averageSales">Average amount of cookies sales per hour</label><br>
-                  <input type="number" id="averageSales" name="averageSales">
+                  <input type="number" id="averageSales" name="averageSales"><br><br>
+                  <input type="button" value="Add Store Location" onclick="addStoreLocation()" /><br />
                 </fieldset>
               </form>
     </main>
